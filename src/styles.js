@@ -5,7 +5,7 @@ export const Description = styled.h4`
 `;
 
 export const DetailWrapper = styled.div`
-  display: block;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
@@ -75,4 +75,10 @@ export const ThemeButton = styled.button`
 
 export const Title = styled.h1`
   text-align: center;
+`;
+
+export const DeleteButtonStyled = styled.button`
+
+background-color: #262626;
+border-radius: 15%;
 `;
