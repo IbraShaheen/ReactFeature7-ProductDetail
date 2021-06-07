@@ -12,7 +12,7 @@ import { useState } from "react";
 const ProductList = (props) => {
   const [query, setQuery] = useState("");
 
-  const productList = products
+  const productList = props.products
     .filter((product) => product.name.includes(query))
     .map((product) => (
       <ProductItem

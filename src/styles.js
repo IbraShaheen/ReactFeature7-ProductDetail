@@ -31,6 +31,8 @@ export const ListWrapper = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
+  justify-items:center;
+  align-self:center;
 `;
 
 export const ProductWrapper = styled.div`
@@ -80,5 +82,5 @@ export const Title = styled.h1`
 export const DeleteButtonStyled = styled.button`
 
 background-color: #262626;
-border-radius: 15%;
+box-shadow : 2px 2px black;
 `;

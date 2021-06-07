@@ -27,7 +27,8 @@ const theme = {
 function App() {
   const [_products, setProducts] = useState(products);
   const deleteProduct = (productId) => {
-    _products.filter((product) => product.id !== productId);
+    const newProducts = _products.filter((product) => product.id !== productId);
+    setProducts(newProducts);
   };
 
   const [product, setProduct] = useState(null);
