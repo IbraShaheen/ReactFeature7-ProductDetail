@@ -16,6 +16,7 @@ import NavBar from "./components/NavBar";
 import { Route, Switch} from "react-router";
 
 
+
 const theme = {
   light: {
     mainColor: "#242424", // main font color
@@ -43,11 +44,13 @@ function App() {
   const setView = () => {
     if (product)
       return (
+
+        
         <ProductDetail
-          product={product}
+          products={products}
           setProduct={setProduct}
-          deleteProduct={deleteProduct}
-        />
+          deleteProduct={deleteProduct} />   
+
       );
     else
       return (
@@ -66,6 +69,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme[currentTheme]}>
+
       <GlobalStyle />
 
       <NavBar currentTheme={currentTheme} toggleTheme={toggleTheme}/>
@@ -77,8 +81,15 @@ function App() {
            
 
           <Switch>
+
+          <Route path="/products/:productSlug">
+          <ProductDetail
+          products={products}
+          setProduct={setProduct}
+          deleteProduct={deleteProduct} /> 
+          </Route>
+
          <Route path="/products">
-         
          <ProductList
           setProduct={setProduct}
           products={_products}
@@ -86,9 +97,9 @@ function App() {
           </Route>
           
           <Route exact path="/">
-          
           <Home />
           </Route>
+
           </Switch>
 
     </ThemeProvider>

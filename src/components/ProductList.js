@@ -10,6 +10,7 @@ import { useState } from "react";
 // import ProductItem from "./ProductItem";
 
 import { Link } from "react-router-dom";
+import {Helmet} from "react-helmet";
 
 const ProductList = (props) => {
   const [query, setQuery] = useState("");
@@ -28,6 +29,10 @@ const ProductList = (props) => {
   return (
     <>
       <SearchBar setQuery={setQuery} />
+      <Helmet>
+      <title>products</title>
+      </Helmet>
+      
       <ListWrapper>{productList}</ListWrapper>
     </>
   );
