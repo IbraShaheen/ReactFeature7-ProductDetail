@@ -1,4 +1,6 @@
+import { NavLink , Link } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
+import NavBar from "./components/NavBar";
 
 export const Description = styled.h4`
   text-align: center;
@@ -83,4 +85,35 @@ export const DeleteButtonStyled = styled.button`
 
 background-color: #262626;
 box-shadow : 2px 2px black;
+`;
+
+
+export const NewNav = styled(NavLink)`
+
+&.active
+{
+background-color: cyan;
+color: black;
+font-weight:bold;
+box-shadow : 2px 2px 2px white;
+}
+`;
+
+export const Navtwo = styled(NavLink)`
+
+margin-left:15px;
+&.active
+{
+background-color: greenyellow;
+color: black;
+font-weight:bold;
+box-shadow : 2px 2px 2px white;
+}
+`;
+
+
+export const NavCont = styled.nav `
+display:flex;
+justify-content: space-evenly;
+padding: 0px 50px;
 `;

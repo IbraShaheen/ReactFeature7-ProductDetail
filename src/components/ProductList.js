@@ -9,6 +9,8 @@ import products from "../products";
 import { useState } from "react";
 // import ProductItem from "./ProductItem";
 
+import { Link } from "react-router-dom";
+
 const ProductList = (props) => {
   const [query, setQuery] = useState("");
 

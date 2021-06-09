@@ -1,14 +1,21 @@
 // Styling
-import { GlobalStyle, ThemeButton } from "./styles";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./components/Home";
+import { GlobalStyle, ThemeButton , NewNav, NewBar } from "./styles";
+
 // Components
 import ProductList from "./components/ProductList";
 import { ThemeProvider } from "styled-components";
 import { useState } from "react";
 import ProductDetail from "./components/ProductDetail";
-
 import products from "./products";
+
+import NavBar from "./components/NavBar";
+
+
+import { Route, Switch} from "react-router";
+
+
 const theme = {
   light: {
     mainColor: "#242424", // main font color
@@ -60,11 +67,30 @@ function App() {
   return (
     <ThemeProvider theme={theme[currentTheme]}>
       <GlobalStyle />
+
+      <NavBar currentTheme={currentTheme} toggleTheme={toggleTheme}/>
       <ThemeButton onClick={toggleTheme}>
         {currentTheme === "light" ? "Dark" : "Light"} Mode
       </ThemeButton>
-      <Home />
-      {setView()}
+      
+      {/* {setView()} */}
+           
+
+          <Switch>
+         <Route path="/products">
+         
+         <ProductList
+          setProduct={setProduct}
+          products={_products}
+          deleteProduct={deleteProduct} />
+          </Route>
+          
+          <Route exact path="/">
+          
+          <Home />
+          </Route>
+          </Switch>
+
     </ThemeProvider>
   );
 }
